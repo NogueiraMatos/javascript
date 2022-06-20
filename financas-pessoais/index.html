@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;700;900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/797e057ed0.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Minhas Finanças Pessoais</title>
+</head>
+
+<body>
+    <div class="background">
+        <div class="principal">
+            <img src="logotipo.png" class="logo">
+            <div class="div-dashboard">
+                <div class="div-dashboard-item">
+                    <div class="div-inner-dashboard">
+                        <div class="div-inner-dashboard-span-div">
+                            <span class="div-inner-dashboard-span">Saldo Atual</span>
+                        </div>
+                        <div>
+                            <span class="div-inner-dashboard-span-balance" id="balance">R$ 6.772,00</span>
+                        </div>
+                    </div>
+                    <div class="div-inner-dashboard">
+                        <i class="fa-solid fa-scale-unbalanced"></i>
+                    </div>
+                </div>
+                <div class="div-dashboard-item">
+                    <div class="div-inner-dashboard">
+                        <div class="div-inner-dashboard-span-div">
+                            <span class="div-inner-dashboard-span">Receitas</span>
+                        </div>
+                        <div>
+                            <span class="div-inner-dashboard-span-balance" id="incomes">R$ 7.000,00</span>
+                        </div>
+                    </div>
+                    <div class="div-inner-dashboard">
+                        <i class="fa-solid fa-arrow-up"></i>
+                    </div>
+                </div>
+                <div class="div-dashboard-item">
+                    <div class="div-inner-dashboard">
+                        <div class="div-inner-dashboard-span-div">
+                            <span class="div-inner-dashboard-span">Despesas</span>
+                        </div>
+                        <div>
+                            <span class="div-inner-dashboard-span-balance" id="expenses">R$ 228,00</span>
+                        </div>
+                    </div>
+                    <div class="div-inner-dashboard">
+                        <i class="fa-solid fa-arrow-down"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="budget-background">
+                <div class="budget">
+                    <div class="add-budget">
+                        <a href="#popup1" class="budget-button"><strong>+ NOVA RECEITA</strong></a>
+                    </div>
+                    <div id="popup1" class="overlay">
+                        <div class="popup">
+                            <h2>Nova receita</h2>
+                            <a class="close" href="#">&times;</a>
+                            <div class="content">
+                                <form>
+                                    <div class="budget-form-value">
+                                        <i class="fa-solid fa-money-bill-trend-up"></i>
+                                        <span class="budget-form-value-span">R$</span>
+                                        <input type="number" class="budget-form-value-input" id="budget-form-value-input" placeholder="0,00">
+                                    </div>
+                                    <div class="budget-form-date">
+                                        <i class="fa-solid fa-calendar-days"></i>
+                                        <span class="budget-form-date-span" id="budget-form-date-span">Hoje</span>
+                                        <span class="budget-form-date-span-outra" id="budget-form-date-span-outra">Outra...</span>
+                                        <input type="date" class="budget-form-date-input" id="budget-form-date-input">
+                                    </div>
+                                    <div class="budget-form-description">
+                                        <i class="fa-solid fa-file"></i>
+                                        <input type="text" class="budget-form-description-input" id="budget-form-description-input"
+                                            placeholder="Descrição">
+                                    </div>
+                                    <div class="budget-form-category">
+                                        <i class="fa-solid fa-tag"></i>
+                                        <select class="budget-form-category-input" id="budget-form-category-input">
+                                            <option value="salario">Salário</option>
+                                            <option value="comissao">Comissão</option>
+                                            <option value="bolsa">Bolsa</option>
+                                            <option value="venda">Venda</option>
+                                        </select>
+                                    </div>
+                                    <div class="budget-form-save-div">
+                                        <div class="budget-form-save-button" id="incomes-save">
+                                            <span>SALVAR</span>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="budget-descriptions">
+                        <div class="budget-descriptions-data"><span>Data</span></div>
+                        <div class="budget-descriptions-description"><span>Descrição</span></div>
+                        <div class="budget-descriptions-category"><span>Categoria</span></div>
+                        <div class="budget-descriptions-value"><span>Valor</span></div>
+                        <div class="budget-descriptions-actions"><span>Ações</span></div>
+                    </div>
+                    <div class="budget-list">
+                        <div class="budget-list-item-data"><span>19/06/2022</span></div>
+                        <div class="budget-list-item-description"><span>Salário</span></div>
+                        <div class="budget-list-item-category"><span>TST</span></div>
+                        <div class="budget-list-item-value"><span>R$ 7.000,00</span></div>
+                        <div class="budget-list-item-actions">
+                            <i class="fa-solid fa-pencil"></i>
+                            <i class="fa-solid fa-trash-can"></i>
+                        </div>
+                    </div>
+                    <div class="budget-bottom">
+                        <span class="budget-bottom-span">Total: R$ 7.000,00</span>
+                    </div>
+                </div>
+            </div>
+            <div class="budget-background">
+                <div class="budget">
+                    <div class="add-budget">
+                        <a href="#popup2" class="expense-button"><strong>+ NOVA DESPESA</strong></a>
+                    </div>
+                    <div id="popup2" class="overlay">
+                        <div class="popup">
+                            <h2>Nova despesa</h2>
+                            <a class="close" href="#">&times;</a>
+                            <div class="content">
+                                <form>
+                                    <div class="expense-form-value">
+                                        <i class="fa-solid fa-coins"></i>
+                                        <span class="budget-form-value-span">R$</span>
+                                        <input type="number" class="expense-form-value-input" placeholder="0,00">
+                                    </div>
+                                    <div class="budget-form-date">
+                                        <i class="fa-solid fa-calendar-days"></i>
+                                        <span class="expense-form-date-span">Hoje</span>
+                                        <span class="budget-form-date-span-outra">Outra...</span>
+                                        <input type="date" class="budget-form-date-input">
+                                    </div>
+                                    <div class="budget-form-description">
+                                        <i class="fa-solid fa-file"></i>
+                                        <input type="text" class="budget-form-description-input"
+                                            placeholder="Descrição">
+                                    </div>
+                                    <div class="budget-form-category">
+                                        <i class="fa-solid fa-tag"></i>
+                                        <select class="budget-form-category-input">
+                                            <option value="alimentacao">Alimentação</option>
+                                            <option value="aluguel">Aluguel</option>
+                                            <option value="telefone">Telefone</option>
+                                            <option value="agua">Água</option>
+                                            <option value="luz">Luz</option>
+                                        </select>
+                                    </div>
+                                    <div class="budget-form-save-div">
+                                        <div class="expense-form-save-button">
+                                            <span>SALVAR</span>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="budget-descriptions">
+                        <div class="budget-descriptions-data"><span>Data</span></div>
+                        <div class="budget-descriptions-description"><span>Descrição</span></div>
+                        <div class="budget-descriptions-category"><span>Categoria</span></div>
+                        <div class="budget-descriptions-value"><span>Valor</span></div>
+                        <div class="budget-descriptions-actions"><span>Ações</span></div>
+                    </div>
+                    <div class="budget-list">
+                        <div class="budget-list-item-data"><span>19/06/2022</span></div>
+                        <div class="budget-list-item-description"><span>Alimentação</span></div>
+                        <div class="budget-list-item-category"><span>Mc Donald's</span></div>
+                        <div class="budget-list-item-value"><span>R$ 100,00</span></div>
+                        <div class="budget-list-item-actions">
+                            <i class="fa-solid fa-pencil"></i>
+                            <i class="fa-solid fa-trash-can"></i>
+                        </div>
+                    </div>
+                    <div class="budget-bottom">
+                        <span class="budget-bottom-span">Total: R$ 100,00</span>
+                    </div>
+                </div>
+            </div>
+            <div class="graphics">
+                <div class="pizza-graphic">
+                    <h2>Despesas por categoria</h2>
+                    <div class="pieContainer">
+                        <div class="pieBackground"></div>
+                        <div id="pieSlice1" class="hold">
+                            <div class="pie"></div>
+                        </div>
+                        <div id="pieSlice2" class="hold">
+                            <div class="pie"></div>
+                        </div>
+                        <div id="pieSlice3" class="hold">
+                            <div class="pie"></div>
+                        </div>
+                        <div id="pieSlice4" class="hold">
+                            <div class="pie"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bars-graphic">
+                    <h2>Balanço mensal</h2>
+                    <div class="bars-graphics-div-main">
+                        <div class="bars-graphic-div1">
+                            <div class="bars-graphic-div1-1">
+                                <strong>
+                                    <p>Receitas</p>
+                                </strong>
+                            </div>
+                            <div class="bars-graphic-div1-2">
+                                <div class="bars-graphic-container">
+                                    <div class="graphic-balance graphic-balance-budget">R$ 7000,00</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bars-graphic-div2">
+                            <div class="bars-graphic-div2-1">
+                                <strong>
+                                    <p>Despesas</p>
+                                </strong>
+                            </div>
+                            <div class="bars-graphic-div2-2">
+                                <div class="bars-graphic-container">
+                                    <div class="graphic-balance graphic-balance-expenses">R$ 228,00</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bars-graphic-div3">
+                            <strong><p>Balanço</p></strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>

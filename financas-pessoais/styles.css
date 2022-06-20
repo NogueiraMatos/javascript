@@ -1,0 +1,489 @@
+/* General */
+body {
+    font-family: 'Maven Pro', sans-serif;
+    background-color: #EDF3FB;
+    margin: 0px;
+    padding: 0px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.background {
+    display: flex;
+    justify-content: center;
+}
+
+.principal {
+    width: 1220px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Top */
+
+.logo {
+    width: 400px;
+    margin: 30px 0px;
+}
+
+/* Dashboard */
+
+.div-dashboard {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.div-dashboard-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 25px;
+    padding: 2px 5px;
+    height: 100px;
+    margin: 10px;
+    width: 100%;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.div-inner-dashboard {
+    margin: 0px 16px;
+
+}
+
+.div-inner-dashboard-span-div {
+    margin-bottom: 10px;
+}
+
+.div-inner-dashboard-span {
+    color: #757575;
+    font-size: 20px;
+}
+
+.div-inner-dashboard-span-balance {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.fa-scale-unbalanced {
+    font-size: 24px;
+    color: #fff;
+    background-color: #2196F3;
+    padding: 10px 8px;
+    border-radius: 50px;
+}
+
+.fa-arrow-up {
+    font-size: 24px;
+    color: #fff;
+    background-color: #4CAF50;
+    border-radius: 50px;
+    padding: 10px 13px;
+}
+
+.fa-arrow-down {
+    font-size: 24px;
+    color: #fff;
+    background-color: #F44336;
+    border-radius: 50px;
+    padding: 10px 13px;
+}
+
+/* Budget and expenses */
+
+.budget-background {
+    width: 100%;
+}
+
+.budget {
+    background-color: #fff;
+    border-radius: 25px;
+    margin: 10px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.add-budget {
+    display: flex;
+    justify-content: center;
+}
+
+.budget-button,
+.expense-button {
+    padding: 10px;
+    color: #4CAF50;
+    margin: 10px;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 25px;
+}
+
+.expense-button {
+    color: #F44336;
+}
+
+.budget-descriptions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #F1F2F2;
+    font-weight: 700;
+}
+
+.budget-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.budget-bottom {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    border-top: 2px;
+    border-top-style: solid;
+    border-color: #F1F2F2;
+    margin: 10px 0px;
+}
+
+.budget-bottom-span {
+    margin-top: 10px;
+    padding: 10px;
+}
+
+/* Popup by Codepen */
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.overlay:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.popup {
+    margin: 70px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 25px;
+    width: 30%;
+    position: relative;
+    transition: all 5s ease-in-out;
+}
+
+.popup h2 {
+    margin-top: 0;
+    color: #333;
+    font-family: Tahoma, Arial, sans-serif;
+}
+
+.popup .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 100ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+}
+
+.popup .close:hover {
+    font-weight: 900;
+
+}
+
+.popup .content {
+    max-height: 30%;
+    overflow: auto;
+}
+
+/* Popup form*/
+
+.fa-money-bill-trend-up,
+.fa-calendar-days,
+.fa-file,
+.fa-tag {
+    font-size: 20px;
+}
+
+.budget-form-value,
+.expense-form-value,
+.budget-form-date,
+.budget-form-description,
+.budget-form-category {
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    margin: 20px;
+    padding-bottom: 12px;
+    color: #757575;
+}
+
+.budget-form-value,
+.budget-form-description,
+.expense-form-value,
+.budget-form-category {
+    display: flex;
+}
+
+.budget-form-value {
+    color: #4CAF50;
+}
+
+.expense-form-value {
+    color: #F44336;
+}
+
+.budget-form-value-span {
+    margin-left: 10px;
+    font-size: 20px;
+}
+
+.budget-form-value-input,
+.budget-form-description-input,
+.budget-form-category-input,
+.expense-form-value-input {
+    border-style: none;
+    width: 100%;
+    margin-left: 10px;
+    font-size: 20px;
+}
+
+.budget-form-value-input {
+    color: #4CAF50;
+}
+
+.expense-form-value-input {
+    color: #F44336;
+}
+
+.budget-form-date-span,
+.expense-form-date-span,
+.budget-form-date-span-outra {
+    background-color: #4CAF50;
+    color: #fff;
+    text-align: right;
+    padding: 10px;
+    border-radius: 25px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.expense-form-date-span {
+    background-color: #F44336;
+}
+
+.budget-form-date-span-outra {
+    background-color: #E0E0E0;
+    color: #000;
+}
+
+.budget-form-date-span-outra:hover {
+    background-color: #CECECE;
+}
+
+.budget-form-save-div {
+    display: flex;
+    justify-content: right;
+}
+
+.budget-form-save-button,
+.expense-form-save-button {
+    background-color: #4CAF50;
+    color: #fff;
+    text-align: right;
+    padding: 10px;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.expense-form-save-button {
+    background-color: #F44336;
+}
+
+.graphics {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.pizza-graphic,
+.bars-graphic {
+    width: 100%;
+    background-color: #fff;
+    border-radius: 25px;
+    margin: 10px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width: 590px;
+}
+
+/*Pizza graphic by devmedia */
+.pieContainer {
+    height: 100px;
+    margin-right: 13%;
+    margin-bottom: 10px;
+}
+
+.pieBackground {
+    background-color: grey;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -o-border-radius: 50px;
+    border-radius: 50px;
+    -moz-box-shadow: -1px 1px 3px #000;
+    -webkit-box-shadow: -1px 1px 3px #000;
+    -o-box-shadow: -1px 1px 3px #000;
+    box-shadow: -1px 1px 3px #000;
+}
+
+.pie {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -o-border-radius: 50px;
+    border-radius: 50px;
+    clip: rect(0px, 50px, 100px, 0px);
+}
+
+.hold {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -o-border-radius: 50px;
+    border-radius: 50px;
+    clip: rect(0px, 100px, 100px, 50px);
+}
+
+#pieSlice1 .pie {
+    background-color: #1b458b;
+    -webkit-transform: rotate(150deg);
+    -moz-transform: rotate(150deg);
+    -o-transform: rotate(150deg);
+    transform: rotate(150deg);
+}
+
+#pieSlice2 {
+    -webkit-transform: rotate(150deg);
+    -moz-transform: rotate(150deg);
+    -o-transform: rotate(150deg);
+    transform: rotate(150deg);
+}
+
+#pieSlice2 .pie {
+    background-color: #ccbb87;
+    -webkit-transform: rotate(40deg);
+    -moz-transform: rotate(40deg);
+    -o-transform: rotate(40deg);
+    transform: rotate(40deg);
+}
+
+#pieSlice3 {
+    -webkit-transform: rotate(190deg);
+    -moz-transform: rotate(190deg);
+    -o-transform: rotate(190deg);
+    transform: rotate(190deg);
+}
+
+#pieSlice3 .pie {
+    background-color: #cc0000;
+    -webkit-transform: rotate(70deg);
+    -moz-transform: rotate(70deg);
+    -o-transform: rotate(70deg);
+    transform: rotate(70deg);
+}
+
+#pieSlice4 {
+    -webkit-transform: rotate(260deg);
+    -moz-transform: rotate(260deg);
+    -o-transform: rotate(260deg);
+    transform: rotate(260deg);
+}
+
+#pieSlice4 .pie {
+    background-color: #cc00ff;
+    -webkit-transform: rotate(100deg);
+    -moz-transform: rotate(100deg);
+    -o-transform: rotate(100deg);
+    transform: rotate(100deg);
+}
+
+/* Bar graphics*/
+
+.bars-graphic-container {
+    width: 90%;
+    background-color: #ddd;
+    box-sizing: border-box;
+    margin: 10px 0px;
+    border-radius: 25px;
+}
+
+.bars-graphics-div-main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.bars-graphic-div1, .bars-graphic-div2, .bars-graphic-div3 {
+    margin: 0px 10px;
+    width: 100%;
+    display: flex;
+}
+
+.bars-graphic-div1-1,
+.bars-graphic-div2-1 {
+    display: flex;
+    flex-direction: row;
+    margin-right: 10px;
+}
+
+.bars-graphic-div1-2,
+.bars-graphic-div2-2 {
+    width: 100%;
+}
+
+.graphic-balance {
+    text-align: center;
+    font-weight: 700;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: white;
+    border-radius: 25px;
+}
+
+.graphic-balance-budget {
+    width: 100%;
+    background-color: #4CAF50;
+}
+
+.graphic-balance-expenses {
+    width: 10%;
+    background-color: #cc0000;
+    
+}
