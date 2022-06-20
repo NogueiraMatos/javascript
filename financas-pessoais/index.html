@@ -24,7 +24,8 @@
                             <span class="div-inner-dashboard-span">Saldo Atual</span>
                         </div>
                         <div>
-                            <span class="div-inner-dashboard-span-balance" id="balance">R$ 6.772,00</span>
+                            <span class="div-inner-dashboard-span-balance">R$ </span>
+                            <span class="div-inner-dashboard-span-balance" id="balance">6.772,00</span>
                         </div>
                     </div>
                     <div class="div-inner-dashboard">
@@ -37,7 +38,8 @@
                             <span class="div-inner-dashboard-span">Receitas</span>
                         </div>
                         <div>
-                            <span class="div-inner-dashboard-span-balance" id="incomes">R$ 7.000,00</span>
+                            <span class="div-inner-dashboard-span-balance">R$ </span>
+                            <span class="div-inner-dashboard-span-balance" id="incomes">7.000,00</span>
                         </div>
                     </div>
                     <div class="div-inner-dashboard">
@@ -50,7 +52,8 @@
                             <span class="div-inner-dashboard-span">Despesas</span>
                         </div>
                         <div>
-                            <span class="div-inner-dashboard-span-balance" id="expenses">R$ 228,00</span>
+                            <span class="div-inner-dashboard-span-balance">R$ </span>
+                            <span class="div-inner-dashboard-span-balance" id="expenses">228,00</span>
                         </div>
                     </div>
                     <div class="div-inner-dashboard">
@@ -67,23 +70,27 @@
                         <div class="popup">
                             <h2>Nova receita</h2>
                             <a class="close" href="#">&times;</a>
+                            <div class="popup-alert" id="popup-alert">
+                                <span>Digite um valor válido maior que zero.</span>
+                            </div>
                             <div class="content">
                                 <form>
                                     <div class="budget-form-value">
                                         <i class="fa-solid fa-money-bill-trend-up"></i>
                                         <span class="budget-form-value-span">R$</span>
-                                        <input type="number" class="budget-form-value-input" id="budget-form-value-input" placeholder="0,00">
+                                        <input type="number" class="budget-form-value-input"
+                                            id="budget-form-value-input" placeholder="0,00">
                                     </div>
                                     <div class="budget-form-date">
                                         <i class="fa-solid fa-calendar-days"></i>
                                         <span class="budget-form-date-span" id="budget-form-date-span">Hoje</span>
-                                        <span class="budget-form-date-span-outra" id="budget-form-date-span-outra">Outra...</span>
+                                        <span class="budget-form-date-span-outra budget-form-date-span-outra-off" id="outra">Outra...</span>
                                         <input type="date" class="budget-form-date-input" id="budget-form-date-input">
                                     </div>
                                     <div class="budget-form-description">
                                         <i class="fa-solid fa-file"></i>
-                                        <input type="text" class="budget-form-description-input" id="budget-form-description-input"
-                                            placeholder="Descrição">
+                                        <input type="text" class="budget-form-description-input"
+                                            id="budget-form-description-input" placeholder="Descrição">
                                     </div>
                                     <div class="budget-form-category">
                                         <i class="fa-solid fa-tag"></i>
@@ -95,7 +102,7 @@
                                         </select>
                                     </div>
                                     <div class="budget-form-save-div">
-                                        <div class="budget-form-save-button" id="incomes-save">
+                                        <div class="budget-form-save-button" id="budget-form-save-button">
                                             <span>SALVAR</span>
                                         </div>
                                     </div>
@@ -110,18 +117,23 @@
                         <div class="budget-descriptions-value"><span>Valor</span></div>
                         <div class="budget-descriptions-actions"><span>Ações</span></div>
                     </div>
-                    <div class="budget-list">
-                        <div class="budget-list-item-data"><span>19/06/2022</span></div>
-                        <div class="budget-list-item-description"><span>Salário</span></div>
-                        <div class="budget-list-item-category"><span>TST</span></div>
-                        <div class="budget-list-item-value"><span>R$ 7.000,00</span></div>
-                        <div class="budget-list-item-actions">
-                            <i class="fa-solid fa-pencil"></i>
-                            <i class="fa-solid fa-trash-can"></i>
-                        </div>
+                    <div id="budget-list-container">
+                        <!--
+                        <div class="budget-list">
+                            <div class="budget-list-item-data" id="budget-list-item-data"><span></span></div>
+                            <div class="budget-list-item-description" id="budget-list-item-description">
+                                <span></span></div>
+                            <div class="budget-list-item-category" id="budget-list-item-category"><span></span></div>
+                            <div class="budget-list-item-value" id="budget-list-item-value"><span></span>
+                            </div>
+                            <div class="budget-list-item-actions">
+                                <i class="fa-solid fa-pencil" id="fa-pencil"></i>
+                                <i class="fa-solid fa-trash-can" id="fa-trash-can"></i>
+                            </div>
+                        </div> -->
                     </div>
                     <div class="budget-bottom">
-                        <span class="budget-bottom-span">Total: R$ 7.000,00</span>
+                        <span class="budget-bottom-span" id="budget-bottom-span">Total: R$ 7.000,00</span>
                     </div>
                 </div>
             </div>
@@ -144,7 +156,7 @@
                                     <div class="budget-form-date">
                                         <i class="fa-solid fa-calendar-days"></i>
                                         <span class="expense-form-date-span">Hoje</span>
-                                        <span class="budget-form-date-span-outra">Outra...</span>
+                                        <span class="budget-form-date-span-outra budget-form-date-span-outra-off" id="budget-form-date-span-outra">Outra...</span>
                                         <input type="date" class="budget-form-date-input">
                                     </div>
                                     <div class="budget-form-description">
@@ -240,7 +252,9 @@
                             </div>
                         </div>
                         <div class="bars-graphic-div3">
-                            <strong><p>Balanço</p></strong>
+                            <strong>
+                                <p>Balanço</p>
+                            </strong>
                         </div>
                     </div>
                 </div>

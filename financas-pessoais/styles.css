@@ -215,6 +215,22 @@ a {
 
 /* Popup form*/
 
+.popup-alert {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.popup-alert-visible {
+    background-color:#ff7676;
+    text-align: center;
+    padding: 5px 0px;
+    border-radius: 15px;
+    position: relative;
+    transition: opacity 500ms;
+    opacity: 1;
+}
+
 .fa-money-bill-trend-up,
 .fa-calendar-days,
 .fa-file,
@@ -288,9 +304,14 @@ a {
     background-color: #F44336;
 }
 
-.budget-form-date-span-outra {
+.budget-form-date-span-outra-off {
     background-color: #E0E0E0;
     color: #000;
+}
+
+.budget-form-date-span-outra-click {
+    background-color:#4CAF50;
+    color: #fff;
 }
 
 .budget-form-date-span-outra:hover {
