@@ -69,7 +69,7 @@
                     <div id="popup1" class="overlay">
                         <div class="popup">
                             <h2>Nova receita</h2>
-                            <a class="close" href="#">&times;</a>
+                            <a class="close" href="#" id="closePopup">&times;</a>
                             <div class="popup-alert" id="popup-alert">
                                 <span>Digite um valor válido maior que zero.</span>
                             </div>
@@ -78,13 +78,13 @@
                                     <div class="budget-form-value">
                                         <i class="fa-solid fa-money-bill-trend-up"></i>
                                         <span class="budget-form-value-span">R$</span>
-                                        <input type="number" class="budget-form-value-input"
-                                            id="budget-form-value-input" placeholder="0,00">
+                                        <input type="text" class="budget-form-value-input"
+                                            id="budget-form-value-input" placeholder="0,00" size="12" onKeyUp="mascaraMoeda(this, event)">
                                     </div>
                                     <div class="budget-form-date">
                                         <i class="fa-solid fa-calendar-days"></i>
                                         <span class="budget-form-date-span" id="budget-form-date-span">Hoje</span>
-                                        <span class="budget-form-date-span-outra budget-form-date-span-outra-off" id="outra">Outra...</span>
+                                        <span class="budget-form-date-span-outra budget-form-date-span-outra-off" id="budget-form-date-span-outra">Outra...</span>
                                         <input type="date" class="budget-form-date-input" id="budget-form-date-input">
                                     </div>
                                     <div class="budget-form-description">
@@ -130,7 +130,8 @@
                                 <i class="fa-solid fa-pencil" id="fa-pencil"></i>
                                 <i class="fa-solid fa-trash-can" id="fa-trash-can"></i>
                             </div>
-                        </div> -->
+                        </div>
+                         -->
                     </div>
                     <div class="budget-bottom">
                         <span class="budget-bottom-span" id="budget-bottom-span">Total: R$ 7.000,00</span>
