@@ -143,7 +143,8 @@ a {
     padding: 20px;
 }
 
-.fa-pencil, .fa-trash-can {
+.fa-pencil,
+.fa-trash-can {
     cursor: pointer;
 }
 
@@ -159,7 +160,7 @@ a {
 
 .budget-bottom-span {
     margin-top: 10px;
-    padding: 10px;
+    padding: 10px 10px 10px 0px;
 }
 
 /* Popup by Codepen */
@@ -175,7 +176,8 @@ a {
     opacity: 0;
 }
 
-.overlay:target, .overlay-target {
+.overlay:target,
+.overlay-target {
     visibility: visible;
     opacity: 1;
 }
@@ -226,13 +228,17 @@ a {
 }
 
 .popup-alert-visible {
-    background-color:#ff7676;
+    background-color: #ff7676;
     text-align: center;
     padding: 5px 0px;
     border-radius: 15px;
     position: relative;
     transition: opacity 500ms;
     opacity: 1;
+}
+
+.popup-alert-span {
+    margin: 3px;
 }
 
 .fa-money-bill-trend-up,
@@ -308,13 +314,19 @@ a {
     background-color: #F44336;
 }
 
-.budget-form-date-span-outra-off {
+.budget-form-date-span-outra-off,
+.expense-form-date-span-outra-off {
     background-color: #E0E0E0;
     color: #000;
 }
 
 .budget-form-date-span-outra-click {
-    background-color:#4CAF50;
+    background-color: #4CAF50;
+    color: #fff;
+}
+
+.expense-form-date-span-outra-click {
+    background-color: #F44336;
     color: #fff;
 }
 
@@ -348,7 +360,6 @@ a {
     justify-content: center;
 }
 
-.pizza-graphic,
 .bars-graphic {
     width: 100%;
     background-color: #fff;
@@ -360,103 +371,6 @@ a {
     align-items: center;
     flex-direction: column;
     max-width: 590px;
-}
-
-/*Pizza graphic by devmedia */
-.pieContainer {
-    height: 100px;
-    margin-right: 13%;
-    margin-bottom: 10px;
-}
-
-.pieBackground {
-    background-color: grey;
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    -moz-border-radius: 50px;
-    -webkit-border-radius: 50px;
-    -o-border-radius: 50px;
-    border-radius: 50px;
-    -moz-box-shadow: -1px 1px 3px #000;
-    -webkit-box-shadow: -1px 1px 3px #000;
-    -o-box-shadow: -1px 1px 3px #000;
-    box-shadow: -1px 1px 3px #000;
-}
-
-.pie {
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    -moz-border-radius: 50px;
-    -webkit-border-radius: 50px;
-    -o-border-radius: 50px;
-    border-radius: 50px;
-    clip: rect(0px, 50px, 100px, 0px);
-}
-
-.hold {
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    -moz-border-radius: 50px;
-    -webkit-border-radius: 50px;
-    -o-border-radius: 50px;
-    border-radius: 50px;
-    clip: rect(0px, 100px, 100px, 50px);
-}
-
-#pieSlice1 .pie {
-    background-color: #1b458b;
-    -webkit-transform: rotate(150deg);
-    -moz-transform: rotate(150deg);
-    -o-transform: rotate(150deg);
-    transform: rotate(150deg);
-}
-
-#pieSlice2 {
-    -webkit-transform: rotate(150deg);
-    -moz-transform: rotate(150deg);
-    -o-transform: rotate(150deg);
-    transform: rotate(150deg);
-}
-
-#pieSlice2 .pie {
-    background-color: #ccbb87;
-    -webkit-transform: rotate(40deg);
-    -moz-transform: rotate(40deg);
-    -o-transform: rotate(40deg);
-    transform: rotate(40deg);
-}
-
-#pieSlice3 {
-    -webkit-transform: rotate(190deg);
-    -moz-transform: rotate(190deg);
-    -o-transform: rotate(190deg);
-    transform: rotate(190deg);
-}
-
-#pieSlice3 .pie {
-    background-color: #cc0000;
-    -webkit-transform: rotate(70deg);
-    -moz-transform: rotate(70deg);
-    -o-transform: rotate(70deg);
-    transform: rotate(70deg);
-}
-
-#pieSlice4 {
-    -webkit-transform: rotate(260deg);
-    -moz-transform: rotate(260deg);
-    -o-transform: rotate(260deg);
-    transform: rotate(260deg);
-}
-
-#pieSlice4 .pie {
-    background-color: #cc00ff;
-    -webkit-transform: rotate(100deg);
-    -moz-transform: rotate(100deg);
-    -o-transform: rotate(100deg);
-    transform: rotate(100deg);
 }
 
 /* Bar graphics*/
@@ -475,22 +389,24 @@ a {
     width: 100%;
 }
 
-.bars-graphic-div1, .bars-graphic-div2, .bars-graphic-div3 {
-    margin: 0px 10px;
+.bars-graphic-div1,
+.bars-graphic-div3 {
+    margin: 0px 15px;
     width: 100%;
     display: flex;
+    justify-content: space-between;
 }
 
-.bars-graphic-div1-1,
-.bars-graphic-div2-1 {
+.bars-graphic-div1-1 {
     display: flex;
     flex-direction: row;
-    margin-right: 10px;
+    margin-right: 20px;
 }
 
-.bars-graphic-div1-2,
-.bars-graphic-div2-2 {
+.bars-graphic-div1-2 {
     width: 100%;
+    margin: 0px 10px;
+    max-width: 450px;
 }
 
 .graphic-balance {
@@ -510,5 +426,27 @@ a {
 .graphic-balance-expenses {
     width: 10%;
     background-color: #cc0000;
-    
+
+}
+
+.graphic-expense-alimentacao {
+    width: 100%;
+    background-color: #941a05;
+}
+
+.graphic-expense-aluguel {
+    width: 40%;
+    background-color: #c500cc;
+
+}
+
+.graphic-expense-agua {
+    width: 100%;
+    background-color: #24f0ff;
+}
+
+.graphic-expense-luz {
+    width: 30%;
+    background-color: #ffae00;
+
 }
