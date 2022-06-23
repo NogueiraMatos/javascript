@@ -15,6 +15,7 @@ class UI {
         this.budgetFormDescriptionInput = document.getElementById("budget-form-description-input")
         this.budgetFormCategoryInput = document.getElementById("budget-form-category-input")
         this.budgetFormSaveButton = document.getElementById("budget-form-save-button")
+
         this.budgetListContainer = document.getElementById("budget-list-container")
         this.budgetListContainer = document.getElementById("budget-list-container")
         this.budgetListItemData = document.getElementById("budget-list-item-data")
@@ -54,6 +55,23 @@ class UI {
         this.expenseAgua = 0
         this.expenseLuz = 0
 
+        this.expensesGraphAlimentacao = document.getElementById("expenses-graph-alimentacao")
+        this.expensesGraphAluguel = document.getElementById("expenses-graph-aluguel")
+        this.expensesGraphAgua = document.getElementById("expenses-graph-agua")
+        this.expensesGraphLuz = document.getElementById("expenses-graph-luz")
+        this.balanceGraphBudget = document.getElementById("balance-graph-budget")
+        this.balanceGraphExpenses = document.getElementById("balance-graph-expenses")
+        this.balanceBottomGraphicSpan = document.getElementById("balance-bottom-graphic-span")
+        this.expenseBottomGraphicSpan = document.getElementById("expenses-bottom-graphic-span")
+
+        this.expensesGraphAlimentacaoSpan = document.getElementById("expenses-graph-alimentacao-span")
+        this.expensesGraphAluguelSpan = document.getElementById("expenses-graph-aluguel-span")
+        this.expensesGraphAguaSpan = document.getElementById("expenses-graph-agua-span")
+        this.expensesGraphLuzSpan = document.getElementById("expenses-graph-luz-span")
+        this.balanceGraphBudgetSpan = document.getElementById("balance-graph-budget-span")
+        this.balanceGraphExpensesSpan = document.getElementById("balance-graph-expenses-span")
+        
+
     }
 
     submitBudgetSave(budgetOrExpenses) {
@@ -84,7 +102,7 @@ class UI {
                 let incomeInNumber = this.realToNumber(income)
                 this.budgetSum += incomeInNumber
                 this.updateDashboard(this.budgetSum, 'budget')
-
+                this.updateBalanceGraph(this.budgetSum, this.expenseSum)
                 this.budgetFormValueInput.value = ''
                 this.budgetFormDescriptionInput.value = ''
                 this.budgetFormCategoryInput.value = 'Salário'
@@ -131,6 +149,8 @@ class UI {
                         this.expenseLuz += expenseInNumber
                         break
                 }
+                this.updateExpensesGraph(this.expenseAlimentacao, this.expenseAluguel, this.expenseAgua, this.expenseLuz)
+                this.updateBalanceGraph(this.budgetSum, this.expenseSum)
                 this.expenseFormValueInput.value = ''
                 this.expenseFormDescriptionInput.value = ''
                 this.expenseFormCategoryInput.value = 'Alimentação'
@@ -150,9 +170,31 @@ class UI {
         } else {
             this.expenses.textContent = this.numberToReal(modifiedValue)
             this.expenseBottomSpan.textContent = this.numberToReal(modifiedValue)
+            this.expenseBottomGraphicSpan.textContent = this.expenseBottomSpan.textContent
         }
-        this.balance.textContent = this.budgetSum - this.expenseSum
+        this.balance.textContent = this.numberToReal(this.budgetSum - this.expenseSum)
+        this.balanceBottomGraphicSpan.textContent = this.balance.textContent
 
+    }
+
+    updateExpensesGraph(alimentacao, aluguel, agua, luz) {
+        let sum = alimentacao + aluguel + agua + luz
+        this.expensesGraphAlimentacaoSpan.textContent = this.numberToReal(alimentacao)
+        this.expensesGraphAluguelSpan.textContent = this.numberToReal(aluguel)
+        this.expensesGraphAguaSpan.textContent = this.numberToReal(agua)
+        this.expensesGraphLuzSpan.textContent = this.numberToReal(luz)
+        this.expensesGraphAlimentacao.style.width = `${alimentacao *100 / sum}%`
+        this.expensesGraphAluguel.style.width = `${aluguel *100 / sum}%`
+        this.expensesGraphAgua.style.width = `${agua *100 / sum}%`
+        this.expensesGraphLuz.style.width = `${luz *100 / sum}%`
+    }
+
+    updateBalanceGraph(budget, expense) {
+        let sum = budget + expense
+        this.balanceGraphBudgetSpan.textContent = this.numberToReal(budget)
+        this.balanceGraphExpensesSpan.textContent = this.numberToReal(expense)
+        this.balanceGraphBudget.style.width = `${budget *100 / sum}%`
+        this.balanceGraphExpenses.style.width = `${expense *100 / sum}%`
     }
 
     createDiv(submitObject) {

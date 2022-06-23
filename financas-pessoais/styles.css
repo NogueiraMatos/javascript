@@ -33,9 +33,10 @@ a {
 
 .div-dashboard {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     width: 100%;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .div-dashboard-item {
@@ -48,7 +49,7 @@ a {
     padding: 2px 5px;
     height: 100px;
     margin: 10px;
-    width: 100%;
+    
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
@@ -161,6 +162,33 @@ a {
 .budget-bottom-span {
     margin-top: 10px;
     padding: 10px 10px 10px 0px;
+}
+
+.budget-list-item-data {
+    width: 15%;
+    text-align: left;
+    min-width: 95px;
+}
+
+.budget-list-item-description {
+    width: 20%;
+    text-align: center;
+}
+
+.budget-list-item-category{
+    width: 25%;
+    min-width: 95px;
+    text-align: center;
+}
+
+.budget-list-item-value{
+    width: 25%;
+    text-align: center;
+}
+
+.budget-list-item-actions{
+    width: 12%;
+    text-align: right;
 }
 
 /* Popup by Codepen */
@@ -397,6 +425,15 @@ a {
     justify-content: space-between;
 }
 
+.bars-graphic-div3 {
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.bars-graphic-div3-span {
+    margin-left: 10px;
+}
+
 .bars-graphic-div1-1 {
     display: flex;
     flex-direction: row;
@@ -414,39 +451,39 @@ a {
     font-weight: 700;
     padding-top: 10px;
     padding-bottom: 10px;
-    color: white;
+    color: #ddd;
     border-radius: 25px;
 }
 
 .graphic-balance-budget {
-    width: 100%;
+    width: 0%;
     background-color: #4CAF50;
 }
 
 .graphic-balance-expenses {
-    width: 10%;
+    width: 0%;
     background-color: #cc0000;
 
 }
 
 .graphic-expense-alimentacao {
-    width: 100%;
+    width: 0%;
     background-color: #941a05;
 }
 
 .graphic-expense-aluguel {
-    width: 40%;
+    width: 0%;
     background-color: #c500cc;
 
 }
 
 .graphic-expense-agua {
-    width: 100%;
+    width: 0%;
     background-color: #24f0ff;
 }
 
 .graphic-expense-luz {
-    width: 30%;
+    width: 0%;
     background-color: #ffae00;
 
 }

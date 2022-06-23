@@ -91,7 +91,7 @@
                                     <div class="budget-form-description">
                                         <i class="fa-solid fa-file"></i>
                                         <input type="text" class="budget-form-description-input"
-                                            id="budget-form-description-input" placeholder="Descrição">
+                                            id="budget-form-description-input" placeholder="Descrição" maxlength="20">
                                     </div>
                                     <div class="budget-form-category">
                                         <i class="fa-solid fa-tag"></i>
@@ -158,7 +158,7 @@
                                     <div class="budget-form-description">
                                         <i class="fa-solid fa-file"></i>
                                         <input type="text" class="budget-form-description-input"
-                                            id="expense-form-description-input" placeholder="Descrição">
+                                            id="expense-form-description-input" placeholder="Descrição" maxlength="20">
                                     </div>
                                     <div class="budget-form-category">
                                         <i class="fa-solid fa-tag"></i>
@@ -206,7 +206,7 @@
                             </div>
                             <div class="bars-graphic-div1-2">
                                 <div class="bars-graphic-container">
-                                    <div class="graphic-balance graphic-expense-alimentacao">R$ 7000,00</div>
+                                    <div id="expenses-graph-alimentacao" class="graphic-expense-alimentacao graphic-balance"><span>R$ </span><span id="expenses-graph-alimentacao-span">0,00</span></div>
                                 </div>
                             </div>
                         </div>
@@ -218,7 +218,7 @@
                             </div>
                             <div class="bars-graphic-div1-2">
                                 <div class="bars-graphic-container">
-                                    <div class="graphic-balance graphic-expense-aluguel">R$ 228,00</div>
+                                    <div id="expenses-graph-aluguel" class="graphic-balance graphic-expense-aluguel"><span>R$ </span><span id="expenses-graph-aluguel-span">0,00</span></div>
                                 </div>
                             </div>
                         </div>
@@ -230,7 +230,7 @@
                             </div>
                             <div class="bars-graphic-div1-2">
                                 <div class="bars-graphic-container">
-                                    <div class="graphic-balance graphic-expense-agua">R$ 7000,00</div>
+                                    <div id="expenses-graph-agua" class="graphic-balance graphic-expense-agua"><span>R$ </span><span id="expenses-graph-agua-span">0,00</span></div>
                                 </div>
                             </div>
                         </div>
@@ -242,14 +242,13 @@
                             </div>
                             <div class="bars-graphic-div1-2">
                                 <div class="bars-graphic-container">
-                                    <div class="graphic-balance graphic-expense-luz">R$ 7000,00</div>
+                                    <div id="expenses-graph-luz" class="graphic-balance graphic-expense-luz"><span>R$ </span><span id="expenses-graph-luz-span">0,00</span></div>
                                 </div>
                             </div>
                         </div>
                         <div class="bars-graphic-div3">
-                            <strong>
-                                <p>Balanço</p>
-                            </strong>
+                                <p>Total R$ </p>
+                            <span id="expenses-bottom-graphic-span" class="bars-graphic-div3-span">0,00</span>
                         </div>
                     </div>
                 </div>
@@ -265,7 +264,7 @@
                             </div>
                             <div class="bars-graphic-div1-2">
                                 <div class="bars-graphic-container">
-                                    <div class="graphic-balance graphic-balance-budget">R$ 7000,00</div>
+                                    <div id="balance-graph-budget" class="graphic-balance graphic-balance-budget"><span>R$ </span><span id="balance-graph-budget-span">0,00</span></div>
                                 </div>
                             </div>
                         </div>
@@ -277,14 +276,13 @@
                             </div>
                             <div class="bars-graphic-div1-2">
                                 <div class="bars-graphic-container">
-                                    <div class="graphic-balance graphic-balance-expenses">R$ 228,00</div>
+                                    <div id="balance-graph-expenses" class="graphic-balance graphic-balance-expenses"><span>R$ </span><span id="balance-graph-expenses-span">0,00</span></div>
                                 </div>
                             </div>
                         </div>
                         <div class="bars-graphic-div3">
-                            <strong>
-                                <p>Balanço</p>
-                            </strong>
+                                <p>Total R$ </p>
+                            <span id="balance-bottom-graphic-span" class="bars-graphic-div3-span">0,00</span>
                         </div>
                     </div>
                 </div>
